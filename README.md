@@ -27,8 +27,8 @@ A Zig Library for Mathematical Numerical Method Techniques
 
 3. **Root Finding:**
 
-- [ ] Bisection Method
-- [ ] Secant Method
+- [X] Bisection Method
+- [X] Secant Method
 
 4. **Numerical Integration:**
 
