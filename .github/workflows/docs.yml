@@ -28,7 +28,7 @@ jobs:
          - name: Run Build Docs
            run: zig build docs
          - name: Move to docs
-           run: mv zig-out/docs/* docs
+           run: mv zig-out/docs/* .
          - name: Commit book to Gh-Pages
            uses: JamesIves/github-pages-deploy-action@3.7.1
            with:
