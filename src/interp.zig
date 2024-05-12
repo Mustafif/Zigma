@@ -7,6 +7,16 @@ pub fn linear(x: f64, x1: f64, x2: f64, y1: f64, y2: f64) f64 {
 pub const Points = struct {
     x: []f64,
     y: []f64,
+
+    pub fn init(x: []f64, y: []f64) Points {
+        return .{ .x = x, .y = y };
+    }
+
+    pub fn init_rawc(x: [*c]f64, y: [*c]f64) Points {
+        const x_ptr: *[]f64 = @ptrCast(@alignCast(x));
+        const y_ptr: *[]f64 = @ptrCast(@alignCast(y));
+        return .{ .x = x_ptr.*, .y = y_ptr.* };
+    }
 };
 
 pub const Poly = struct {
