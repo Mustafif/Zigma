@@ -5,13 +5,13 @@ A Zig Library for Mathematical Numerical Method Techniques
 
 1. **Interpolation and Approximation:**
 
-- [ ] Linear Interpolation
-- [ ] Polynomial Interpolation
-  - [ ] Lagrange Interpolation
-  - [ ] Newton Interpolation
-- [ ] Spline Interpolation
-  - [ ] Cubic Spline
-  - [ ] Quadratic Spline
+- [X] Linear Interpolation
+- [X] Polynomial Interpolation
+  - [X] Lagrange Interpolation
+  - [X] Newton Interpolation
+- [X] Spline Interpolation
+  - [X] Cubic Spline
+  - [X] Quadratic Spline
 - [ ] Least Square Approximation
 - [ ] Chebyshev Approximation
 
