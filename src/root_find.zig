@@ -1,3 +1,15 @@
+//! This namespace contains functions for finding the roots of functions using various methods.
+//!
+//! - Bisection Method: (`bisection`)
+//!  - The bisection method is a simple root-finding algorithm that works by repeatedly dividing the interval in half and selecting the subinterval in which the root lies.
+//! - The method requires that the function be continuous and that the interval contains a root.
+//!
+//! - Secant Method: (`secant`)
+//! - The secant method is a root-finding algorithm that uses a sequence of roots of secant lines to approximate the root of a function.
+//! - The method does not require the function to be continuous, but it does require that the function be differentiable.
+//!
+//! For Newton's method see the `optimization` namespace.
+
 const function = *const fn (f64) f64;
 
 /// Performs the bisection method to find the root of a function within a given interval.
@@ -10,7 +22,7 @@ const function = *const fn (f64) f64;
 ///
 /// # Returns
 /// The approximate root of the function within the given interval.
-pub fn bisection(f: function, a: f64, b: f64, tol: f64) f64 {
+pub fn bisection(comptime f: function, a: f64, b: f64, tol: f64) f64 {
     var c: f64 = undefined;
     var arg_a: f64 = a;
     var arg_b: f64 = b;
@@ -28,16 +40,16 @@ pub fn bisection(f: function, a: f64, b: f64, tol: f64) f64 {
 }
 
 /// Uses the secant method to find the root of a function within a given tolerance.
-/// 
+///
 /// # Parameters
 /// - `f`: The function for which to find the root.
 /// - `a`: The lower bound of the interval.
 /// - `b`: The upper bound of the interval.
 /// - `tol`: The tolerance for the root approximation.
-/// 
+///
 /// # Returns
 /// The approximate root of the function within the given tolerance.
-pub fn secant(f: function, a: f64, b: f64, tol: f64) f64 {
+pub fn secant(comptime f: function, a: f64, b: f64, tol: f64) f64 {
     var c: f64 = undefined;
     var arg_a: f64 = a;
     var arg_b: f64 = b;
