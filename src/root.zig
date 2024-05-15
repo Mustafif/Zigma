@@ -18,6 +18,7 @@ pub const root_find = @import("root_find.zig");
 pub const integration = @import("integration.zig");
 pub const differentation = @import("differentation.zig");
 pub const ode = @import("ode.zig");
+pub const plotter = @import("plotter.zig");
 
 /// Emits a todo message as an error log message.
 pub fn todo(msg: []const u8, args: anytype) void {
