@@ -18,8 +18,36 @@ pub const root_find = @import("root_find.zig");
 pub const integration = @import("integration.zig");
 pub const differentation = @import("differentation.zig");
 pub const ode = @import("ode.zig");
-pub const plotter = @import("plotter.zig");
 
+// This is a fork of Github user  @Remy2701's [zigplotlib](https://github.com/Remy2701/zigplotlib)
+// This is a simple plotting library for Zig, which we we hope to expand and maintain ourself, but glad
+// to give credit to the original author for the initial work.
+// Plot Module
+pub const Figure = @import("plot/Figure.zig");
+pub const Plot = @import("plot/Plot.zig");
+pub const Line = @import("plot/Line.zig");
+pub const Area = @import("plot/Area.zig");
+pub const Scatter = @import("plot/Scatter.zig");
+pub const Step = @import("plot/Step.zig");
+pub const Stem = @import("plot/Stem.zig");
+pub const FigureInfo = @import("plot/FigureInfo.zig");
+
+// Util Module
+pub const Range = @import("util/range.zig").Range;
+pub const polyshape = @import("util/polyshape.zig");
+
+// SVG Module
+pub const SVG = @import("svg/SVG.zig");
+pub const length = @import("svg/util/length.zig");
+pub const LengthPercent = length.LengthPercent;
+pub const LengthPercentAuto = length.LengthPercentAuto;
+pub const rgb = @import("svg/util/rgb.zig");
+pub const RGB = rgb.RGB;
+
+test "./plot Test" {
+    std.testing.refAllDecls(FigureInfo);
+    std.testing.refAllDecls(Figure);
+}
 /// Emits a todo message as an error log message.
 pub fn todo(msg: []const u8, args: anytype) void {
     std.log.err(msg, args);
